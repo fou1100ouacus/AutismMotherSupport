@@ -1,0 +1,114 @@
+### AuthController HTTP Requests ###
+
+@baseUrl = https://localhost:7176
+@contentType = application/json
+
+### Register User ###
+POST {{baseUrl}}/api/auth/register
+Content-Type: {{contentType}}
+
+{
+  "firstName": "ali",
+  "lastName": "mo",
+  "email": "ali.doe@example.com",
+  "userName": "aliusrname",
+  "password": "Password123!",
+  "passwordConfirmed": "Password123!",
+  "phoneNumber": "+1234167890"
+}
+
+### Login User ###
+POST {{baseUrl}}/api/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "ali.doe@example.com",
+  "password": "Password123!",
+  "rememberMe": true
+}
+
+### Confirm Email ###
+GET {{baseUrl}}/api/auth/confirmEmail?userId=2&token=TOKEN_HERE
+
+### Confirm Change Email ###
+GET {{baseUrl}}/api/auth/confirmChangeEmail?userId=USER_ID_HERE&newEmail=newemail@example.com&token=TOKEN_HERE
+
+### Forgot Password ###
+POST {{baseUrl}}/api/auth/forgotPassword?email=john.doe@example.com
+
+### Reset Password ###
+POST {{baseUrl}}/api/auth/resetPassword
+Content-Type: {{contentType}}
+
+{
+  "email": "john.doe@example.com",
+  "token": "RESET_TOKEN_HERE",
+  "newPassword": "NewPassword123!"
+}
+
+### Refresh Token ###
+POST {{baseUrl}}/api/auth/refreshToken
+Content-Type: {{contentType}}
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+{
+  "token": "YOUR_REFRESH_TOKEN_HERE",
+  "refreshToken": "YOUR_REFRESH_TOKEN_HERE"
+}
+
+### Logout ###
+POST {{baseUrl}}/api/auth/logout
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### RoleController HTTP Requests ###
+
+### Get All Roles ###
+GET {{baseUrl}}/api/role
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Get Role by ID ###
+GET {{baseUrl}}/api/role/1
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Get User Role ###
+GET {{baseUrl}}/api/role?userId=1
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Update Role ###
+PUT {{baseUrl}}/api/role?roleId=1&name=UpdatedRoleName
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Add Role ###
+POST {{baseUrl}}/api/role?roleName=NewRole
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Change User Role ###
+POST {{baseUrl}}/api/role/ChangeUserRole?userId=1&roleName=Admin
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### AccountController HTTP Requests ###
+
+### Get Profile ###
+GET {{baseUrl}}/api/account/GetProfile
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Update Profile ###
+PUT {{baseUrl}}/api/account/updateProfile
+Content-Type: {{contentType}}
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+{
+  "firstName": "John Updated",
+  "lastName": "Dve Updated",
+  "userName": "johndoe_updated",
+  "email": "john.updated@example.com",
+  "phoneNumber": "+1987654321"
+}
+
+### Change Password ###
+POST {{baseUrl}}/api/account/changePassword?currentPassword=Password123!&newPassword=NewPassword456!
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Change Email ###
+POST {{baseUrl}}/api/account/changeEmail?newEmail=newemail@example.com
+Authorization: Bearer YOUR_JWT_TOKEN_HERE

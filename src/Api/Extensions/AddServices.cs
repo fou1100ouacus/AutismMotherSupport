@@ -1,4 +1,4 @@
-﻿
+﻿using Application.Mapping.AccountMapping;
 namespace Api.Extensions
 {
     public static class AddServices
@@ -9,7 +9,7 @@ namespace Api.Extensions
             {
                 opt.UseSqlServer(configration.GetConnectionString("DefaultConnection"));
             });
-
+service.AddAutoMapper(typeof(Application.Mapping.AccountMapping.AccountProfile).Assembly); 
             service.AddIdentity<AppUser, AppRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;

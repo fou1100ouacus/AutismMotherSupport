@@ -14,7 +14,7 @@
             var seedFilesPath = Path.Combine(contentRootPath, "Persistence", "SeedFiles");
             if (!Directory.Exists(seedFilesPath))
             {
-                seedFilesPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "TradeSphere.Infrastructure", "Persistence", "SeedFiles");
+                seedFilesPath = Path.Combine(Directory.GetCurrentDirectory(), "..", "Infrastructure", "Persistence", "SeedFiles");
             }
             if (!Directory.Exists(seedFilesPath))
             {

@@ -1,4 +1,4 @@
-﻿namespace TradeSphere.Application.Mapping.RoleMapping
+﻿namespace Application.Mapping.RoleMapping
 {
     public class RoleProfile : Profile
     {

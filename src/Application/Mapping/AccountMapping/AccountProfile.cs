@@ -1,4 +1,4 @@
-﻿namespace TradeSphere.Application.Mapping.AccountMapping
+﻿namespace Application.Mapping.AccountMapping
 {
     public class AccountProfile : Profile
     {
