@@ -10,7 +10,8 @@ namespace Api
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+ 
+ 
             
             builder.Services.ApplyServices(builder.Configuration);
             builder.Services.AddAuthorizeSwaggerAsync(builder.Configuration);
